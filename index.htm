@@ -1,0 +1,215 @@
+<html>
+
+<body>
+
+    <div style="display:inline-block; justify-content: center;border-block: solid; border-color:black;">
+        <div style="margin: 5px;">
+            <p id="ooo"></p>
+            <input type="text" id="output" style="height: 50px;width: 250px;text-align: right;"></input>
+        </div>
+
+
+        <div>
+            <div style="margin: 5px;">
+                <button id="c" style="height: 60px ;width: 60px;">C</button>
+                <button id="percentage" style="height: 60px ;width: 60px;">%</button>
+                <button id="bspace" style="height: 60px ;width: 60px;">X</button>
+                <button id="divide" style="height: 60px ;width: 60px;">/</button>
+            </div>
+        </div>
+        <div>
+            <div style="margin: 5px;">
+                <button id="7" style="height: 60px ;width: 60px;">7</button>
+                <button id="8" style="height: 60px ;width: 60px;">8</button>
+                <button id="9" style="height: 60px ;width: 60px;">9</button>
+                <button id="multiply" style="height: 60px ;width: 60px;">*</button>
+            </div>
+        </div>
+        <div>
+            <div style="margin: 5px;">
+                <button id="4" style="height: 60px ;width: 60px;">4</button>
+                <button id="5" style="height: 60px ;width: 60px;">5</button>
+                <button id="6" style="height: 60px ;width: 60px;">6</button>
+                <button id="minus" style="height: 60px ;width: 60px;">-</button>
+            </div>
+        </div>
+        <div>
+            <div style="margin: 5px;">
+                <button id="1" style="height: 60px ;width: 60px;">1</button>
+                <button id="2" style="height: 60px ;width: 60px;">2</button>
+                <button id="3" style="height: 60px ;width: 60px;">3</button>
+                <button id="plus" style="height: 60px ;width: 60px;">+</button>
+            </div>
+        </div>
+
+        <div>
+            <div style="margin: 5px;">
+                <button id="double0" style="height: 60px ;width: 60px;">00</button>
+                <button id="0" style="height: 60px ;width: 60px;">0</button>
+                <button id="dot" style="height: 60px ;width: 60px;">.</button>
+                <button id="equal" style="height: 60px ;width: 60px;">=</button>
+            </div>
+        </div>
+
+    </div>
+
+    <script>
+        document.getElementById("plus").addEventListener("click", add);
+        var x = document.getElementById("minus");
+        x.addEventListener("click", sub);
+        document.getElementById("multiply").addEventListener("click", mul);
+        document.getElementById("divide").addEventListener("click", divide);
+        document.getElementById("percentage").addEventListener("click", percentage);
+        document.getElementById("1").addEventListener("click", one);
+        document.getElementById("2").addEventListener("click", two);
+        document.getElementById("3").addEventListener("click", three);
+        document.getElementById("4").addEventListener("click", four);
+        document.getElementById("5").addEventListener("click", five);
+        document.getElementById("6").addEventListener("click", six);
+        document.getElementById("7").addEventListener("click", seven);
+        document.getElementById("8").addEventListener("click", eight);
+        document.getElementById("9").addEventListener("click", nine);
+        document.getElementById("0").addEventListener("click", zero);
+        document.getElementById("double0").addEventListener("click", double);
+        document.getElementById("dot").addEventListener("click", dot);
+        document.getElementById("bspace").addEventListener("click", bspace);
+        document.getElementById("c").addEventListener("click", c);
+        document.getElementById("equal").addEventListener("click", equal);
+
+        let s = ""
+        const stack = []
+
+        function add() {
+            o = s.slice(-1)
+            console.log(o)
+            if (s.length > 0 && s.slice(-1) != "+" && s.slice(-1) != "-" && s.slice(-1) != "/" && s.slice(-1) != "*" && s.slice(-1) != "." && s.slice(-1) != "%") {
+                s = s + "+"
+                document.getElementById("output").value = s
+            }
+        }
+
+        function sub() {
+            if (s.length > 0 && s.slice(-1) != "+" && s.slice(-1) != "-" && s.slice(-1) != "/" && s.slice(-1) != "*" && s.slice(-1) != "." && s.slice(-1) != "%") {
+
+                s = s + "-"
+                document.getElementById("output").value = s
+            }
+        }
+
+        function divide() {
+            if (s.length > 0 && s.slice(-1) != "+" && s.slice(-1) != "-" && s.slice(-1) != "/" && s.slice(-1) != "*" && s.slice(-1) != "." && s.slice(-1) != "%") {
+
+                s = s + "/"
+                document.getElementById("output").value = s
+            }
+        }
+
+        function mul() {
+            if (s.length > 0 && s.slice(-1) != "+" && s.slice(-1) != "-" && s.slice(-1) != "/" && s.slice(-1) != "*" && s.slice(-1) != "." && s.slice(-1) != "%") {
+
+                s = s + "*"
+                document.getElementById("output").value = s
+            }
+        }
+
+        function percentage() {
+            if (s.length > 0 && s.slice(-1) != "+" && s.slice(-1) != "-" && s.slice(-1) != "/" && s.slice(-1) != "*" && s.slice(-1) != "." && s.slice(-1) != "%") {
+
+                s = s + "%"
+                document.getElementById("output").value = s
+            }
+        }
+
+        function one() {
+            s = s + "1"
+            document.getElementById("output").value = s
+        }
+
+        function two() {
+            s = s + "2"
+            document.getElementById("output").value = s
+        }
+
+        function three() {
+            s = s + "3"
+            document.getElementById("output").value = s
+        }
+
+        function four() {
+            s = s + "4"
+            document.getElementById("output").value = s
+        }
+
+        function five() {
+            s = s + "5"
+            document.getElementById("output").value = s
+        }
+
+        function six() {
+            s = s + "6"
+            document.getElementById("output").value = s
+        }
+
+        function seven() {
+            s = s + "7"
+            document.getElementById("output").value = s
+        }
+
+        function eight() {
+            s = s + "8"
+            document.getElementById("output").value = s
+        }
+
+        function nine() {
+            s = s + "9"
+            document.getElementById("output").value = s
+        }
+
+        function zero() {
+            s = s + "0"
+            document.getElementById("output").value = s
+        }
+
+        function double() {
+            s = s + "00"
+            document.getElementById("output").value = s
+        }
+
+        function dot() {
+            if (s.length > 0 && s.slice(-1) != "+" && s.slice(-1) != "-" && s.slice(-1) != "/" && s.slice(-1) != "*" && s.slice(-1) != "." && s.slice(-1) != "%") {
+
+                s = s + "."
+                document.getElementById("output").value = s
+            }
+        }
+
+        function c() {
+            s = ""
+            document.getElementById("output").value = s
+
+        }
+
+        function bspace() {
+            console.log(s)
+            if (s.length > 0) {
+                s = s.slice(0, -1)
+            }
+
+            document.getElementById("output").value = s
+        }
+
+        function equal() {
+            if (s.length > 2) {
+                var res = eval(s)
+
+                s = res.toString()
+                console.log(res)
+                document.getElementById("output").value = res;
+            }
+        }
+    </script>
+
+
+</body>
+
+</html>
